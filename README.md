@@ -2,7 +2,7 @@
 
 Meus estudos sobre Clojure.
 
-## Temas abordados:
+## Temas Abordados:
 * Utilize diversas estruturas de dados como vetores, listas, conjuntos, filas e mapas
 * Entenda os problemas de concorrência e processamento paralelo
 * Use átomos e retry de transações
