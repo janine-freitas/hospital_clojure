@@ -1,10 +1,20 @@
-# hospital_clojure
+# hospital
 
-A Clojure library designed to ... well, that part is up to you.
+Meus estudos sobre Clojure.
 
-## Usage
+## Temas abordados:
+* Utilize diversas estruturas de dados como vetores, listas, conjuntos, filas e mapas
+* Entenda os problemas de concorrência e processamento paralelo
+* Use átomos e retry de transações
+* Utilize partials, doseq, dotimes, juxt, future e outras funções
+* Entenda a diferença entre atoms e refs
+* Utilize as vantagens e entenda as dificuldades de usar refs
 
-FIXME
+
+## Fontes
+Curso: Clojure - Mutabilidade com átomos e refs (ALURA) 
+
+Professor: https://www.linkedin.com/in/guilhermeazevedosilveira/
 
 ## License
 
