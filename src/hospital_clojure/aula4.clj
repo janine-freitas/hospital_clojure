@@ -46,4 +46,35 @@
     (.start (Thread. (fn [] (Thread/sleep 8000)
                        (pprint hospital))))))
 
-(simula-um-dia-em-paralero-refatorando-partial)
+;DOSEQ
+(defn starta-thread-de-chegada-doseq
+  [hospital pessoa]
+  (.start (Thread. (fn [] (chega-sem-malvado! hospital pessoa)))))
+
+(defn simula-um-dia-em-paralero-refatorando-doseq
+  []
+  (let [hospital (atom (h.model/novo-hospital))
+        pessoas (range 6)]
+
+    (doseq [pessoa pessoas]
+      (starta-thread-de-chegada-doseq hospital pessoa))
+
+    (.start (Thread. (fn [] (Thread/sleep 8000)
+                       (pprint hospital))))))
+
+;DOTIMES
+(defn starta-thread-de-chegada-dotimes
+  [hospital pessoa]
+  (.start (Thread. (fn [] (chega-sem-malvado! hospital pessoa)))))
+
+(defn simula-um-dia-em-paralero-refatorando-dotimes
+  []
+  (let [hospital (atom (h.model/novo-hospital))]
+
+    (dotimes [pessoa 6]
+      (starta-thread-de-chegada-doseq hospital pessoa))
+
+    (.start (Thread. (fn [] (Thread/sleep 8000)
+                       (pprint hospital))))))
+
+(simula-um-dia-em-paralero-refatorando-dotimes)
