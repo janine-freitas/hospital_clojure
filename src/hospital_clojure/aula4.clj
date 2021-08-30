@@ -62,6 +62,19 @@
     (.start (Thread. (fn [] (Thread/sleep 8000)
                        (pprint hospital))))))
 
+(defn teste-doseq []
+  (doseq [x [0 1 2]
+        y [0  1 2]]
+  (prn (* x y))))
+(println "DOSEQ")
+(teste-doseq)
+
+(defn teste-dotimes []
+  (dotimes [x 3]
+    (dotimes [y 3]
+      (prn (* x y)))))
+(println "DOTIMES")
+(teste-dotimes)
 ;DOTIMES
 (defn starta-thread-de-chegada-dotimes
   [hospital pessoa]
