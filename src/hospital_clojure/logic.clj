@@ -44,3 +44,23 @@
       (atende de)
       (chega-em para pessoa))))
 
+;retorna duas coisas em um vetor
+(defn atende-completo
+  [hospital departamento]
+  [(update hospital departamento peek) (update hospital departamento pop)])
+
+;retorna duas coisas em um mapa
+(defn atende-completo
+  [hospital departamento]
+  {:paciente  (update hospital departamento peek)
+   :hospital      (update hospital departamento pop)})
+
+;retorna duas coisas, chama ao mesmo tempo duas funcoes
+(defn atende-completo-que-chama-ambos
+  [hospital departamento]
+  (let [fila (get hospital departamento)
+    peek-pop (juxt peek pop)
+    [pessoa fila-atualizada] (peek-pop fila)
+    hospital-atualizado (update hospital assoc departamento fila-atualizada)]
+  {:paciente  pessoa
+   :hospital  hospital-atualizado}))
